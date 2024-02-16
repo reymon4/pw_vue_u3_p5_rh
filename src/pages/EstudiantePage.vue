@@ -1,5 +1,4 @@
 <template>
-  <h1>Estudiante Page</h1>
   <EstudianteVue/>
 </template>
 

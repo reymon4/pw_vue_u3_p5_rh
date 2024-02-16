@@ -1,11 +1,11 @@
 <template>
   <div class="container">
     <h1>Estudiante Component</h1>
-    <input type="text" v-model="id" placeholder="Ingrese el id del estudiante"/>
+    <input type="text" v-model="id" id="id" placeholder="Insert ID Estudiante"/>
     <button @click="searchForId">Search</button>
 
     <button @click="insertForm = !insertForm">Insert</button>
-    <button @click="update">Update</button>
+   
     <button @click="delet">Delete</button>
     <div v-if="find == true" class="tabla">
       <label for="">NAME</label>
@@ -47,6 +47,7 @@
       <label for="">PROGRAM</label>
       <input type="text" v-model="program" />
       <button @click="save">Save</button>
+      <button @click="update">Update</button>
     </div>
   </div>
 </template>
@@ -101,21 +102,29 @@ export default {
         program: this.program,
         
       };
-      console.log("Save Estudiante!")
       await saveFacade(estuBody);
+      console.log("Estudiante saved!")
     },
     async update(){
       const body ={
-        name:"Hola",
-        lastName:this.lastName,
-        gender:"M",
-        birthdate:this.birthdate,
+        name: this.name,
+        lastName: this.lastName,
+        gender: this.gender,
+        birthdate: this.birthdate,
+        email: this.email,
+        phoneNumber: this.phoneNumber,
+        address: this.address,
+        school: this.school,
+        program: this.program,
 
       };
+     
       await updateFacade(this.id,body);
+      console.log("Updated!");
     },
     async delet(){
         await deleteFacade(this.id);
+        console.log("Deleted! ");
     },
   },
 };

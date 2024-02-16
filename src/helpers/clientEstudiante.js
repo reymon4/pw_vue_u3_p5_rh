@@ -38,7 +38,7 @@ export const saveFacade = async (body) => {
   await save(body);
 };
 
-export const updateFacade = async (body) => {
-  await update(body);
+export const updateFacade = async (id,body) => {
+  await update(id,body);
 };
 export const deleteFacade = async (id) => await delet(id);

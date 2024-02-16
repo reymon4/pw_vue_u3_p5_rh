@@ -1,10 +1,11 @@
 <template>
-  <EstudiantePageVue />
+   <h1>UNIVERSIDAD CENTRAL DEL ECUADOR</h1>
+  <router-view />
 </template>
 
 <script>
 import EstudiantePageVue from "./pages/EstudiantePage.vue";
-import Estudiante from "./components/Estudiante.vue";
+
 
 export default {
   name: "App",
