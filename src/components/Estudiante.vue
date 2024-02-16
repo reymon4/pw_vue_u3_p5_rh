@@ -1,9 +1,12 @@
 <template>
   <div class="container">
     <h1>Estudiante Component</h1>
-    <input type="text" v-model="id" />
+    <input type="text" v-model="id" placeholder="Ingrese el id del estudiante"/>
     <button @click="searchForId">Search</button>
+
     <button @click="insertForm = !insertForm">Insert</button>
+    <button @click="update">Update</button>
+    <button @click="delet">Delete</button>
     <div v-if="find == true" class="tabla">
       <label for="">NAME</label>
       <p>{{ name }}</p>
@@ -49,8 +52,8 @@
 </template>
 
 <script>
-import { searchEstudianteFacade } from "../helpers/clientEstudiante.js";
-import { saveFacade } from "../helpers/clientEstudiante.js";
+import { searchEstudianteFacade, saveFacade,updateFacade, deleteFacade } from "../helpers/clientEstudiante.js";
+
 export default {
   data() {
     return {
@@ -100,6 +103,19 @@ export default {
       };
       console.log("Save Estudiante!")
       await saveFacade(estuBody);
+    },
+    async update(){
+      const body ={
+        name:"Hola",
+        lastName:this.lastName,
+        gender:"M",
+        birthdate:this.birthdate,
+
+      };
+      await updateFacade(this.id,body);
+    },
+    async delet(){
+        await deleteFacade(this.id);
     },
   },
 };
