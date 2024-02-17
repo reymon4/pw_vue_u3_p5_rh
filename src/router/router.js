@@ -1,28 +1,29 @@
 /* Principal archivo de configuracion de rutas de la pagina web */
 /* debemos importar algunas funcionalidades */
 import { createRouter, createWebHashHistory } from "vue-router";
-import EstudianteSave from "../pages/EstudianteSave.vue"
-import EstudianteSearch from "../pages/EstudianteSearch.vue"
-import EstudianteDelete from "../pages/EstudianteDelete.vue"
-import EstudianteUpdate from "../pages/EstudianteUpdate"
 
 const routes = [
   {
     path: "/update",
-    component: EstudianteUpdate,
+    component: ()=>import ("../pages/EstudianteUpdate.vue"),
   },
   {
     path: "/save",
-    component: EstudianteSave,
+    component:  ()=>import ("../pages/EstudianteSave.vue"),
   },
   {
     path: "/delete",
-    component: EstudianteDelete,
+    component: ()=>import ("../pages/EstudianteDelete.vue"),
   },
   {
     path: "/search",
-    component: EstudianteSearch,
+    component:  ()=>import ("../pages/EstudianteSearch.vue"),
   },
+{
+  path:"/:pathMatch(.*)*",
+  component: ()=>import ("../pages/NoFoundPage.vue"),
+}
+
 ];
 const router = createRouter({
   history: createWebHashHistory(),
