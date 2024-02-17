@@ -30,6 +30,18 @@
 <script>
  import {searchEstudianteFacade } from "../helpers/clientEstudiante.js";
 export default {
+  created(){
+    console.log(this.$route)
+
+    console.log(this.$route.params.id)
+    console.log(this.$route.query)
+    console.log(this.$route.query.gender)
+    console.log(this.$route.query.school)
+    this.searchForId()
+  },
+  components:{
+    searchEstudianteFacade,
+  },
   data() {
     return {
       id: null,
@@ -48,7 +60,7 @@ export default {
   },
   methods: {
     async searchForId() {
-      const data = await searchEstudianteFacade(this.id);
+      const data = await searchEstudianteFacade(this.$route.params.id);
       console.log("From component Estudiante...");
       console.log(data);
       this.name = data.name;

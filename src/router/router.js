@@ -16,7 +16,7 @@ const routes = [
     component: ()=>import ("../pages/EstudianteDelete.vue"),
   },
   {
-    path: "/search",
+    path: "/search/:id", //este es un parametro dinamico que se reemplazara por el valor real en tiempo de ejecucion
     component:  ()=>import ("../pages/EstudianteSearch.vue"),
   },
 {

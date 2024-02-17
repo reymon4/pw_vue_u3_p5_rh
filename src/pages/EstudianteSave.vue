@@ -1,8 +1,7 @@
 <template>
     <h1 >Save Page</h1>
-    <button @click="insertForm = !insertForm">Insert</button>
     <div class="container">
-    <div v-if="insertForm == true" class="formTable">
+    <div class="formTable">
       <label for="">NAME</label>
       <input type="text" v-model="name" />
       <label for="">LASTNAME</label>
@@ -42,8 +41,7 @@
       address: null,
       school: null,
       program: null,
-      //For visual effect
-      insertForm: false,
+ 
     };
   },
   methods: {

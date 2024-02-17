@@ -1,6 +1,6 @@
 <template>
     <h1 >Update Page</h1>
-    <input type="text" v-model="id" id="id" placeholder="Insert ID Estudiante"/>
+    <input type="text" v-model="id" id="id" placeholder="Insert ID to update"/>
     <button @click="searchForId">Search</button>
     <div class="container">
     <div v-if="insertForm == true" class="formTable">
