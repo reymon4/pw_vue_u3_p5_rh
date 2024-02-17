@@ -22,7 +22,28 @@ export default {
 </script>
 
 <style>
-button{
-  
+input:focus {
+  outline: none;
 }
+input {
+  border-radius: 10px;
+  width: 300px;
+  height: 30px;
+  text-align: center;
+  font-size: 25px;
+  font-style: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  color:#0acef1;
+}
+button{
+  color:white;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 25px;
+  cursor: pointer;
+  margin-top: 15px;
+  background: #bb7fe9;
+  border-radius: 8px;
+  height: 100%;
+}
+
 </style>
